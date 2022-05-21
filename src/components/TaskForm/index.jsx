@@ -17,7 +17,7 @@ export default function TaskForm() {
     !item ? (addTask(label), setLabel('')) : editTask(item.id, label);
   }
 
-  console.log(label);
+  // console.log(label);
 
   useEffect(() => {
     item ? setLabel(item.label) : setLabel('');
