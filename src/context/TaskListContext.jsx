@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { v1 as uuid } from 'uuid';
 
 export const TaskListContext = createContext();
@@ -14,23 +14,25 @@ export default function TaskListProvider({ children }) {
 
   function addTask(label) {
     setTasks([...tasks, { label, id: uuid() }]);
-    setCleared(false)
+    setCleared(false);
   }
 
   const [item, setItem] = useState(null);
 
   function findTask(id) {
-    const task = tasks.find(task => task.id === id)
-    setItem(task)
+    const task = tasks.find((task) => task.id === id);
+    setItem(task);
   }
 
   function editTask(id, label) {
-    const newTasks = tasks.map(task => task.id === id ? {id, label} : task)
-    setTasks(newTasks)
-    setItem(null)
+    const newTasks = tasks.map((task) =>
+      task.id === id ? { id, label } : task
+    );
+    setTasks(newTasks);
+    setItem(null);
   }
 
-console.log(tasks);
+  // console.log(tasks);
 
   function removeTask(id) {
     setTasks(tasks.filter((task) => task.id !== id));
@@ -38,12 +40,26 @@ console.log(tasks);
 
   const [cleared, setCleared] = useState(false);
 
+  useEffect(() => {
+    tasks.length === 0 && setCleared(true);
+    // console.log(tasks.length, cleared);
+  }, [tasks]);
+
   function clearList() {
     setTasks([]);
-    setCleared(true)
+    setCleared(true);
   }
 
-  const value = { tasks, addTask, item, findTask, editTask, removeTask, cleared, clearList };
+  const value = {
+    tasks,
+    addTask,
+    item,
+    findTask,
+    editTask,
+    removeTask,
+    cleared,
+    clearList,
+  };
 
   return (
     <TaskListContext.Provider value={value}>
