@@ -7,10 +7,14 @@ import icon_edit from '../../assets/icon_edit.svg';
 import './Task.css';
 
 export default function Task({ task }) {
-  const { removeTask } = useContext(TaskListContext);
+  const { removeTask, findTask } = useContext(TaskListContext);
 
   function handleDelete() {
     removeTask(task.id);
+  }
+
+  function handleEdit() {
+    findTask(task.id);
   }
 
   return (
@@ -20,7 +24,7 @@ export default function Task({ task }) {
         <button className="btn_delete btn_task" onClick={handleDelete}>
           <img src={icon_trash} alt="trash icon" />
         </button>
-        <button className="btn_edit btn_task">
+        <button className="btn_edit btn_task" onClick={handleEdit}>
           <img src={icon_edit} alt="edit icon" />
         </button>
       </div>
