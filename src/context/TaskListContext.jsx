@@ -23,6 +23,13 @@ export default function TaskListProvider({ children }) {
     setItem(task)
   }
 
+  function editTask(id, label) {
+    const newTasks = tasks.map(task => task.id === id ? {id, label} : task)
+    setTasks(newTasks)
+  }
+
+console.log(tasks);
+
   function removeTask(id) {
     setTasks(tasks.filter((task) => task.id !== id));
   }
@@ -31,7 +38,7 @@ export default function TaskListProvider({ children }) {
     setTasks([]);
   }
 
-  const value = { tasks, addTask, findTask, removeTask, clearList };
+  const value = { tasks, addTask, item, findTask, editTask, removeTask, clearList };
 
   return (
     <TaskListContext.Provider value={value}>
