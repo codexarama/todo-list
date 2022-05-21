@@ -1,0 +1,18 @@
+#no_task {
+  order: 1;
+  width: 100%;
+  padding-left: 1rem;
+  align-self: center;
+  text-align: left;
+}
+
+#no_task span {
+  position: relative;
+}
+
+#icon_check {
+  position: absolute;
+  top: 0.25rem;
+  width: 1rem;
+  margin-left: 0.5rem;
+}
