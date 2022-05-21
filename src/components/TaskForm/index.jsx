@@ -21,7 +21,7 @@ export default function TaskForm() {
 
   useEffect(() => {
     item ? setLabel(item.label) : setLabel('');
-    console.log(item);
+    // console.log(item);
   }, [item]);
 
   function handleClear() {
