@@ -4,12 +4,14 @@ import { v1 as uuid } from 'uuid';
 export const TaskListContext = createContext();
 
 export default function TaskListProvider({ children }) {
-  const [tasks, setTasks] = useState([
-    { id: 1, label: 'read' },
-    { id: 2, label: 'wash' },
-    { id: 3, label: 'learn' },
-  ]);
+  const initialState = JSON.parse(localStorage.getItem('tasks')) || []
 
+  const [tasks, setTasks] = useState(initialState);
+  // console.table(tasks);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
   // console.table(tasks);
 
   function addTask(label) {
