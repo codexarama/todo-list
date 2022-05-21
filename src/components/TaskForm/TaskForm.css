@@ -1,0 +1,33 @@
+#add_task {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  background-color: var(--dark);
+}
+
+::placeholder {
+  color: var(--tertiary);
+}
+
+#actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 0;
+}
+
+.action {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+
+#action_add {
+  order: 2;
+  background: var(--gradient_variant);
+}
+
+#action_clear {
+  order: 3;
+  margin-left: 1rem;
+  background: var(--gradient_neutral);
+}
