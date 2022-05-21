@@ -17,19 +17,19 @@ export default function TaskListProvider({ children }) {
     setCleared(false);
   }
 
-  const [item, setItem] = useState(null);
+  const [editedTask, setEditedTask] = useState(null);
 
   function findTask(id) {
     const task = tasks.find((task) => task.id === id);
-    setItem(task);
+    setEditedTask(task);
   }
 
-  function editTask(id, label) {
+  function updateTask(id, label) {
     const newTasks = tasks.map((task) =>
       task.id === id ? { id, label } : task
     );
     setTasks(newTasks);
-    setItem(null);
+    setEditedTask(null);
   }
 
   // console.log(tasks);
@@ -53,9 +53,9 @@ export default function TaskListProvider({ children }) {
   const value = {
     tasks,
     addTask,
-    item,
+    editedTask,
     findTask,
-    editTask,
+    updateTask,
     removeTask,
     cleared,
     clearList,
