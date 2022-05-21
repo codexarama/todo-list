@@ -7,7 +7,7 @@ export default function TaskForm() {
   const { addTask, item, editTask, clearList } = useContext(TaskListContext);
 
   const [label, setLabel] = useState('');
-  const [listCleared, setListCleared] = useState(false);
+  // const [listCleared, setListCleared] = useState(false);
 
   function handleChange(event) {
     setLabel(event.target.value);
@@ -15,19 +15,19 @@ export default function TaskForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    item === null ? (addTask(label), setLabel('')) : editTask(item.id, label);
+    !item ? (addTask(label), setLabel('')) : editTask(item.id, label);
   }
 
-  // console.log(label);
+  console.log(label);
 
   useEffect(() => {
     item ? setLabel(item.label) : setLabel('');
-    // console.log(item);
+    console.log(item);
   }, [item]);
 
   function handleClear() {
     clearList();
-    setListCleared(!listCleared);
+    // setListCleared(!listCleared);
   }
 
   return (
@@ -45,11 +45,9 @@ export default function TaskForm() {
           <button id="action_add" className="action" type="submit">
             Add
           </button>
-          {!listCleared && (
-            <button id="action_clear" className="action" onClick={handleClear}>
-              Clear
-            </button>
-          )}
+          <button id="action_clear" className="action" onClick={handleClear}>
+            Clear
+          </button>
         </section>
       </label>
     </form>
