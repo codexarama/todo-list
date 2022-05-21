@@ -1,8 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { TaskListContext } from '../../context/TaskListContext';
 
 import './TaskForm.css';
 
 export default function TaskForm() {
+  const { addTask } = useContext(TaskListContext);
+
   const [label, setLabel] = useState('');
 
   function handleChange(event) {
@@ -10,8 +13,13 @@ export default function TaskForm() {
     setLabel(event.target.value);
   }
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    addTask(label);
+  }
+
   return (
-    <form action="?">
+    <form onSubmit={handleSubmit} action="?">
       <label htmlFor="add_task">
         <input
           id="add_task"
