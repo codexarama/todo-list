@@ -4,19 +4,18 @@ import { TaskListContext } from '../../context/TaskListContext';
 import './TaskForm.css';
 
 export default function TaskForm() {
-  const { addTask, item, clearList } = useContext(TaskListContext);
+  const { addTask, item, editTask, clearList } = useContext(TaskListContext);
 
   const [label, setLabel] = useState('');
   const [listCleared, setListCleared] = useState(false);
 
   function handleChange(event) {
-    event.preventDefault();
     setLabel(event.target.value);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
-    addTask(label);
+    !item ? (addTask(label), setLabel('')) : editTask(item.id, label);
   }
 
   // console.log(label);
