@@ -75,3 +75,13 @@ a,
 }
 
 /* APP */
+#tasks {
+  width: 40vw;
+  height: fit-content;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  color: var(--light);
+  background-color: var(--bg);
+  /* box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.5); */
+  box-shadow: -1rem 1rem rgba(0, 0, 0, 0.5);
+}
