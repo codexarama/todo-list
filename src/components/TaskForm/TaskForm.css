@@ -30,12 +30,12 @@
   background: var(--gradient_variant-hover);
 }
 
-#action_edit {
+#action_update {
   order: 2;
   background: var(--gradient);
 }
 
-#action_edit:hover {
+#action_update:hover {
   background: var(--gradient-hover);
 }
 
@@ -47,4 +47,23 @@
 
 #action_clear:hover {
   background: var(--gradient_neutral-hover);
+}
+
+#no_task {
+  order: 1;
+  width: 100%;
+  padding-left: 1rem;
+  align-self: center;
+  text-align: left;
+}
+
+#no_task span {
+  position: relative;
+}
+
+#icon_check {
+  position: absolute;
+  top: 0.25rem;
+  width: 1rem;
+  margin-left: 0.5rem;
 }
