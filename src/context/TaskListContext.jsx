@@ -14,6 +14,7 @@ export default function TaskListProvider({ children }) {
 
   function addTask(label) {
     setTasks([...tasks, { label, id: uuid() }]);
+    setCleared(false)
   }
 
   const [item, setItem] = useState(null);
@@ -35,11 +36,14 @@ console.log(tasks);
     setTasks(tasks.filter((task) => task.id !== id));
   }
 
+  const [cleared, setCleared] = useState(false);
+
   function clearList() {
     setTasks([]);
+    setCleared(true)
   }
 
-  const value = { tasks, addTask, item, findTask, editTask, removeTask, clearList };
+  const value = { tasks, addTask, item, findTask, editTask, removeTask, cleared, clearList };
 
   return (
     <TaskListContext.Provider value={value}>
