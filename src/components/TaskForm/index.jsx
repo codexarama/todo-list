@@ -1,10 +1,13 @@
 import { useContext, useState, useEffect } from 'react';
 import { TaskListContext } from '../../context/TaskListContext';
 
+import icon_check from '../../assets/icon_check.svg';
+
 import './TaskForm.css';
 
 export default function TaskForm() {
-  const { addTask, item, editTask, cleared, clearList } = useContext(TaskListContext);
+  const { addTask, editedTask, updateTask, cleared, clearList } =
+    useContext(TaskListContext);
 
   const [label, setLabel] = useState('');
 
@@ -14,15 +17,15 @@ export default function TaskForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    !item ? (addTask(label), setLabel('')) : editTask(item.id, label);
+    !editedTask ? (addTask(label), setLabel('')) : updateTask(editedTask.id, label);
   }
 
   // console.log(label);
 
   useEffect(() => {
-    item ? setLabel(item.label) : setLabel('');
-    // console.log(item);
-  }, [item]);
+    editedTask ? setLabel(editedTask.label) : setLabel('');
+    // console.log(editedTask);
+  }, [editedTask]);
 
   function handleClear() {
     clearList();
@@ -40,8 +43,12 @@ export default function TaskForm() {
           required
         />
         <section id="actions">
-        <button id={item ? "action_edit" : "action_add" }  className="action" type="submit">
-            {item ? 'Edit' : 'Add'}
+          <button
+            id={editedTask ? 'action_update' : 'action_add'}
+            className="action"
+            type="submit"
+          >
+            {editedTask ? 'Update' : 'Add'}
           </button>
           {!cleared && (
             <button id="action_clear" className="action" onClick={handleClear}>
