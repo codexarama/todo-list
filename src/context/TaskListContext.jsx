@@ -26,6 +26,7 @@ export default function TaskListProvider({ children }) {
   function editTask(id, label) {
     const newTasks = tasks.map(task => task.id === id ? {id, label} : task)
     setTasks(newTasks)
+    setItem(null)
   }
 
 console.log(tasks);
