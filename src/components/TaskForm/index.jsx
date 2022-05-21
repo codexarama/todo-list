@@ -4,9 +4,10 @@ import { TaskListContext } from '../../context/TaskListContext';
 import './TaskForm.css';
 
 export default function TaskForm() {
-  const { addTask } = useContext(TaskListContext);
+  const { addTask, clearList } = useContext(TaskListContext);
 
   const [label, setLabel] = useState('');
+  const [listCleared, setListCleared] = useState(false);
 
   function handleChange(event) {
     event.preventDefault();
@@ -16,6 +17,11 @@ export default function TaskForm() {
   function handleSubmit(event) {
     event.preventDefault();
     addTask(label);
+  }
+
+  function handleClear() {
+    clearList();
+    setListCleared(!listCleared);
   }
 
   return (
@@ -33,9 +39,11 @@ export default function TaskForm() {
           <button id="action_add" className="action" type="submit">
             Add
           </button>
-          <button id="action_clear" className="action">
-            Clear
-          </button>
+          {!listCleared && (
+            <button id="action_clear" className="action" onClick={handleClear}>
+              Clear
+            </button>
+          )}
         </section>
       </label>
     </form>
