@@ -26,8 +26,25 @@
   background: var(--gradient_variant);
 }
 
+#action_add:hover {
+  background: var(--gradient_variant-hover);
+}
+
+#action_edit {
+  order: 2;
+  background: var(--gradient);
+}
+
+#action_edit:hover {
+  background: var(--gradient-hover);
+}
+
 #action_clear {
   order: 3;
   margin-left: 1rem;
   background: var(--gradient_neutral);
+}
+
+#action_clear:hover {
+  background: var(--gradient_neutral-hover);
 }
