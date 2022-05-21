@@ -15,7 +15,7 @@ export default function TaskForm() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    !item ? (addTask(label), setLabel('')) : editTask(item.id, label);
+    item === null ? (addTask(label), setLabel('')) : editTask(item.id, label);
   }
 
   // console.log(label);
