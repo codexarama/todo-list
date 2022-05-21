@@ -1,10 +1,10 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { TaskListContext } from '../../context/TaskListContext';
 
 import './TaskForm.css';
 
 export default function TaskForm() {
-  const { addTask, clearList } = useContext(TaskListContext);
+  const { addTask, item, clearList } = useContext(TaskListContext);
 
   const [label, setLabel] = useState('');
   const [listCleared, setListCleared] = useState(false);
@@ -18,6 +18,13 @@ export default function TaskForm() {
     event.preventDefault();
     addTask(label);
   }
+
+  // console.log(label);
+
+  useEffect(() => {
+    item ? setLabel(item.label) : setLabel('');
+    // console.log(item);
+  }, [item]);
 
   function handleClear() {
     clearList();
