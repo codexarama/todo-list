@@ -26,10 +26,11 @@ Tags:
   --dark: #000;
   --light: #fff;
   --gradient: linear-gradient(1.1turn, var(--primary), var(--secondary));
-  --gradient_hover: linear-gradient(1.1turn, var(--primary), var(--secondary));
+  --gradient-hover: linear-gradient(-1.1turn, var(--primary), var(--secondary));
   --gradient_variant: linear-gradient(1.1turn, #1c9da3, #44dbc4);
+  --gradient_variant-hover: linear-gradient(-1.1turn, #1c9da3, #44dbc4);
   --gradient_neutral: linear-gradient(1.1turn, grey, darkgrey);
-  --gradient_neutral-hover: linear-gradient(1.1turn, grey, darkgrey);
+  --gradient_neutral-hover: linear-gradient(-1.1turn, grey, darkgrey);
 }
 
 /* STANDARDS */
