@@ -1,0 +1,15 @@
+.list_item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list_item-label {
+  padding: 0.5rem;
+  font-size: large;
+}
+
+.btn_task {
+  width: 0.75rem;
+  padding: 0.5rem;
+}
