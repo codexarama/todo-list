@@ -1,11 +1,15 @@
-import './App.css'
+import TaskListProvider from '../../context/TaskListContext';
+
+import Header from '../Header';
+
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>TODO-LIST</h1>
-    </div>
-  )
+    <TaskListProvider>
+      <Header />
+    </TaskListProvider>
+  );
 }
 
-export default App
+export default App;
