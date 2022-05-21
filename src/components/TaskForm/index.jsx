@@ -50,10 +50,17 @@ export default function TaskForm() {
           >
             {editedTask ? 'Update' : 'Add'}
           </button>
-          {!cleared && (
+          {!cleared ? (
             <button id="action_clear" className="action" onClick={handleClear}>
               Clear
             </button>
+          ) : (
+            <div id="no_task">
+              <span>
+                No tasks
+                <img src={icon_check} alt="icon check" id="icon_check" />
+              </span>
+            </div>
           )}
         </section>
       </label>
