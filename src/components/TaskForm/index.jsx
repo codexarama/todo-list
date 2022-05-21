@@ -42,8 +42,8 @@ export default function TaskForm() {
           required
         />
         <section id="actions">
-          <button id="action_add" className="action" type="submit">
-            Add
+        <button id={item ? "action_edit" : "action_add" }  className="action" type="submit">
+            {item ? 'Edit' : 'Add'}
           </button>
           <button id="action_clear" className="action" onClick={handleClear}>
             Clear
