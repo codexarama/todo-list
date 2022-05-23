@@ -46,23 +46,20 @@ export default function TaskForm() {
         placeholder="New task"
         value={label}
         onChange={handleChange}
+        aria-required="true"
         required
       />
       <section id="actions">
-        <button
-          id={editedTask ? 'action_update' : 'action_add'}
-          className="action"
-          type="submit"
-        >
-          {editedTask ? 'Update' : 'Add'}
+        <button id={isEdited ? 'action_update' : 'action_add'} type="submit">
+          {isEdited ? 'Update' : 'Add'}
         </button>
         {!isCleared ? (
-          <button id="action_clear" className="action" onClick={handleClear}>
+          <button id="action_clear" onClick={handleClear}>
             Clear
           </button>
         ) : (
-          <div id="no_task">
-            <span>
+          <div id="no_task" aria-labelledby="status-information">
+            <span id="status-information">
               No tasks
               <img src={icon_check} alt="icon check" id="icon_check" />
             </span>
