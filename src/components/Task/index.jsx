@@ -1,8 +1,5 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { TaskListContext } from '../../context/TaskListContext';
-
-import icon_trash from '../../assets/icon_trash.svg';
-import icon_edit from '../../assets/icon_edit.svg';
 
 import './Task.css';
 
@@ -15,17 +12,27 @@ export default function Task({ task }) {
 
   function handleEdit() {
     findTask(task.id);
+    const input = document.querySelector('input');
+    input.focus();
   }
 
   return (
     <li className="list_item">
-      <span className="list_item-label">{task.label}</span>
+      <span className="list_item-label" tabIndex="0">
+        {task.label}
+      </span>
       <div className="list_item-action">
-        <button className="btn_delete btn_task" onClick={handleDelete}>
-          <img src={icon_trash} alt="trash icon" />
+        <button
+          id="action_delete"
+          onClick={handleDelete}
+        >
+          {/* icon : background img url in css file */}
         </button>
-        <button className="btn_edit btn_task" onClick={handleEdit}>
-          <img src={icon_edit} alt="edit icon" />
+        <button
+          id="action_edit"
+          onClick={handleEdit}
+        >
+          {/* icon : background img url in css file */}
         </button>
       </div>
     </li>
