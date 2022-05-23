@@ -17,7 +17,7 @@ export default function Task({ task }) {
   }
 
   return (
-    <li role={listitem} className="list_item">
+    <li role="listitem" className="list_item">
       <span className="list_item-label" tabIndex="0">
         {task.label}
       </span>
