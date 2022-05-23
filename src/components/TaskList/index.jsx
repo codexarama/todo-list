@@ -1,8 +1,9 @@
-import { useContext, useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import { useContext } from 'react';
 import { TaskListContext } from '../../context/TaskListContext';
 
 import Task from '../Task';
+
+import './TaskList.css';
 
 export default function TaskList() {
   const { tasks } = useContext(TaskListContext);
@@ -10,7 +11,7 @@ export default function TaskList() {
   return (
     <>
       {tasks.length ? (
-        <ul id="task_list">
+        <ul role="list" id="task_list">
           {tasks.map((task) => {
             return <Task key={task.id} task={task} />;
           })}
