@@ -1,10 +1,10 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect, useRef } from 'react';
 import { v1 as uuid } from 'uuid';
 
 export const TaskListContext = createContext();
 
 export default function TaskListProvider({ children }) {
-  const initialState = JSON.parse(localStorage.getItem('tasks')) || []
+  const initialState = JSON.parse(localStorage.getItem('tasks')) || [];
 
   const [tasks, setTasks] = useState(initialState);
   // console.table(tasks);
@@ -16,14 +16,14 @@ export default function TaskListProvider({ children }) {
 
   function addTask(label) {
     setTasks([...tasks, { label, id: uuid() }]);
-    setCleared(false);
+    setIsCleared(false);
   }
 
-  const [editedTask, setEditedTask] = useState(null);
+  const [isEdited, setIsEdited] = useState(null);
 
   function findTask(id) {
     const task = tasks.find((task) => task.id === id);
-    setEditedTask(task);
+    setIsEdited(task);
   }
 
   function updateTask(id, label) {
@@ -31,7 +31,7 @@ export default function TaskListProvider({ children }) {
       task.id === id ? { id, label } : task
     );
     setTasks(newTasks);
-    setEditedTask(null);
+    setIsEdited(null);
   }
 
   // console.log(tasks);
@@ -40,26 +40,26 @@ export default function TaskListProvider({ children }) {
     setTasks(tasks.filter((task) => task.id !== id));
   }
 
-  const [cleared, setCleared] = useState(false);
+  const [isCleared, setIsCleared] = useState(false);
 
   useEffect(() => {
-    tasks.length === 0 && setCleared(true);
-    // console.log(tasks.length, cleared);
+    tasks.length === 0 && setIsCleared(true);
+    // console.log(tasks.length, isCleared);
   }, [tasks]);
 
   function clearList() {
     setTasks([]);
-    setCleared(true);
+    setIsCleared(true);
   }
 
   const value = {
     tasks,
     addTask,
-    editedTask,
+    isEdited,
     findTask,
     updateTask,
     removeTask,
-    cleared,
+    isCleared,
     clearList,
   };
 
