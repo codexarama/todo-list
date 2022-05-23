@@ -1,15 +1,35 @@
-.list_item {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.list_item-label {
-  padding: 0.5rem;
-  font-size: large;
-}
-
-.btn_task {
-  width: 0.75rem;
+.list_item-label,
+.list_item-action {
   padding: 0.5rem;
 }
+
+.list_item-action button {
+  width: 1rem;
+}
+
+#action_delete {
+  margin-right: 0.5rem;
+  background: url(../../assets/icon_trash.svg) no-repeat center bottom;
+}
+
+#action_delete:hover,
+#action_delete:focus {
+  background-image: url(../../assets/icon_trash_alt.svg);
+}
+
+#action_edit {
+  margin-left: 0.5rem;
+  background: url(../../assets/icon_edit.svg) no-repeat center bottom;
+}
+
+#action_edit:hover,
+#action_edit:focus {
+  background-image: url(../../assets/icon_edit_alt.svg);
+}
+
+#action_delete:focus,
+#action_edit:focus {
+  box-shadow: none;
+  border-radius: 0;
+}
+
