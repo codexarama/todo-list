@@ -1,4 +1,11 @@
-export default function Header({ heading }) {
+import React from "react";
+// import { useEffect } from 'react';
+
+function Header({ heading }) {
+  // useEffect(() => {
+  //   console.log('header is rendering');
+  // }, []);
+
   return (
     <header aria-labelledby="page-title">
       <h1 tabIndex="0" id="page-title">
@@ -7,3 +14,5 @@ export default function Header({ heading }) {
     </header>
   );
 }
+
+export default React.memo(Header);
