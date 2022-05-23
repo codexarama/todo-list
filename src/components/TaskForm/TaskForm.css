@@ -16,18 +16,19 @@
   padding: 1rem 0;
 }
 
-.action {
+#actions button {
   padding: 0.5rem 1rem;
   border-radius: 2rem;
 }
 
 #action_add {
   order: 2;
-  background: var(--gradient_variant);
+  background: var(--gradient-variant);
 }
 
-#action_add:hover {
-  background: var(--gradient_variant-hover);
+#action_add:hover,
+#action_add:focus {
+  background: var(--gradient-variant_hover);
 }
 
 #action_update {
@@ -35,18 +36,20 @@
   background: var(--gradient);
 }
 
-#action_update:hover {
-  background: var(--gradient-hover);
+#action_update:hover,
+#action_update:focus {
+  background: var(--gradient_hover);
 }
 
 #action_clear {
   order: 3;
   margin-left: 1rem;
-  background: var(--gradient_neutral);
+  background: var(--gradient-neutral);
 }
 
-#action_clear:hover {
-  background: var(--gradient_neutral-hover);
+#action_clear:hover,
+#action_clear:focus {
+  background: var(--gradient-neutral_hover);
 }
 
 #no_task {
