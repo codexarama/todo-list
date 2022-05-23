@@ -9,10 +9,12 @@ import './App.css';
 function App() {
   return (
     <TaskListProvider>
-      <Header />
-      <main id="tasks">
-        <TaskForm />
-        <TaskList />
+      <main id="tasks_manager">
+        <Header heading="My tasks" />
+        <section id="tasks">
+          <TaskForm />
+          <TaskList />
+        </section>
       </main>
     </TaskListProvider>
   );
