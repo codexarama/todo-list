@@ -1,9 +1,14 @@
+// import { useEffect } from 'react';
 import React, { useContext } from 'react';
 import { TaskListContext } from '../../context/TaskListContext';
 
 import './Task.css';
 
-export default function Task({ task }) {
+function Task({ task }) {
+  // useEffect(() => {
+  //   console.log('task is rendering');
+  // }, []);
+
   const { removeTask, findTask } = useContext(TaskListContext);
 
   function handleDelete() {
@@ -42,3 +47,5 @@ export default function Task({ task }) {
     </li>
   );
 }
+
+export default React.memo(Task);
