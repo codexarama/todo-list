@@ -1,3 +1,4 @@
+// import { useEffect } from 'react';
 import { useContext } from 'react';
 import { TaskListContext } from '../../context/TaskListContext';
 
@@ -6,6 +7,10 @@ import Task from '../Task';
 import './TaskList.css';
 
 export default function TaskList() {
+  // useEffect(() => {
+  //   console.log('task list is rendering');
+  // }, []);
+
   const { tasks } = useContext(TaskListContext);
 
   return (
