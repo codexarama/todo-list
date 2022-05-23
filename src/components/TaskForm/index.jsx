@@ -14,17 +14,18 @@ export default function TaskForm() {
 
   useEffect(() => {
     refLabel.current = label;
-  });
+    // console.log('task form is rendering');
+  }, []);
 
   function handleChange(event) {
     event.preventDefault();
     setLabel(event.target.value);
   }
 
-  function handleSubmit(event) {
+  const handleSubmit = useCallback((event) => {
     event.preventDefault();
     !isEdited ? (addTask(label), setLabel('')) : updateTask(isEdited.id, label);
-  }
+  });
 
   // console.log(label);
 
@@ -44,6 +45,7 @@ export default function TaskForm() {
         id="add_task"
         type="text"
         placeholder="New task"
+        ref={refLabel}
         value={label}
         onChange={handleChange}
         aria-required="true"
