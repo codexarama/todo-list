@@ -23,6 +23,7 @@
 
 #action_add {
   order: 2;
+  font-weight: 600;
   background: var(--gradient-variant);
 }
 
@@ -33,6 +34,7 @@
 
 #action_update {
   order: 2;
+  font-weight: 600;
   background: var(--gradient);
 }
 
@@ -43,6 +45,7 @@
 
 #action_clear {
   order: 3;
+  font-weight: 600;
   margin-left: 1rem;
   background: var(--gradient-neutral);
 }
@@ -51,6 +54,49 @@
 #action_clear:focus {
   background: var(--gradient-neutral_hover);
 }
+
+/* EFFECTS */
+/* background effects settings */
+/* #actions button {
+  position: relative;
+  transition: all 0.25s;
+  animation-fill-mode: backwards;
+}
+
+#actions button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-weight: 600;
+  border-radius: 5rem;
+  transition: all 1s;
+}
+
+#actions button:hover::after {
+  transform: scaleX(1.2) scaleY(1.4);
+  opacity: 0.1;
+}
+
+#action_add::after {
+  content: 'Add';
+  background: var(--gradient-variant);
+}
+
+#action_update::after {
+  content: 'Update';
+  background: var(--gradient);
+}
+
+#action_clear::after {
+  content: 'Clear';
+  background: var(--gradient-neutral);
+} */
+/* end EFFECTS */
 
 #no_task {
   order: 1;
