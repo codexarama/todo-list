@@ -1,9 +1,9 @@
-import React from 'react';
-
-export default function Header() {
+export default function Header({ heading }) {
   return (
-    <header>
-      <h1>My tasks</h1>
+    <header aria-labelledby="page-title">
+      <h1 tabIndex="0" id="page-title">
+        {heading}
+      </h1>
     </header>
   );
 }
