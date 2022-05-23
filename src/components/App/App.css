@@ -78,6 +78,21 @@ body::-webkit-scrollbar,
   width: 0;
 }
 
+/* ACCESSIBILITY */
+input:focus,
+button:focus,
+span:focus {
+  outline: none;
+  box-shadow: 0 0 0 1.5px var(--light);
+  border-radius: 2rem;
+}
+
+h1:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--light);
+  border-radius: 2rem;
+}
+
 /* APP */
 #tasks_manager {
   min-height: 100vh;
@@ -97,5 +112,5 @@ body::-webkit-scrollbar,
   color: var(--light);
   background-color: var(--bg);
   /* box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.5); */
-  box-shadow: -1rem 1rem rgba(0, 0, 0, 0.5);
+  box-shadow: -1rem 1rem rgba(0, 0, 0, 0.5) !important;
 }
