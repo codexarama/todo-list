@@ -10,6 +10,7 @@ Develop a to do list app that is
 
     ✔ INTERACTIVE
     ✔ PERSISTIVE
+    ✔ ADAPTATIVE
     ✔ EVOLUTIVE
     ✔ PERFORMANT
 
@@ -19,7 +20,7 @@ Develop a to do list app that is
 :pencil2: EDIT TASK
 :arrows_counterclockwise: UPDATE TASK
 :x: DELETE TASK
-:heavy_check_mark: CLEAT LIST
+:heavy_check_mark: CLEAR LIST
 
 ## Skills developed
 
