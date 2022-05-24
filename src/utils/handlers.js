@@ -21,3 +21,15 @@ document.addEventListener('mousedown', () => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Tab' || e.shiftKey) accessStyles.innerHTML = '';
 });
+
+// THEME SWITCHER
+
+export const theme = {
+  clear: 'clear_bg',
+  add: 'add_bg',
+  update: 'update_bg',
+};
+
+export function bgSwitcher(previous, updated) {
+  document.body.classList.replace(previous, updated);
+}
