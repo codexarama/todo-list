@@ -55,8 +55,8 @@
   background: var(--gradient-neutral_hover);
 }
 
-/* EFFECTS */
-/* background effects settings */
+/***** EFFECTS *****/
+/***** background effects settings *****/
 /* #actions button {
   position: relative;
   transition: all 0.25s;
@@ -96,7 +96,7 @@
   content: 'Clear';
   background: var(--gradient-neutral);
 } */
-/* end EFFECTS */
+/***** end EFFECTS *****/
 
 #no_task {
   order: 1;
