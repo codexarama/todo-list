@@ -1,6 +1,8 @@
 // import { useEffect } from 'react';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { TaskListContext } from '../../context/TaskListContext';
+// import { ThemeContext, themes } from '../../context/ThemeContext';
+import { bgSwitcher, theme } from '../../utils/handlers';
 
 import './Task.css';
 
@@ -15,10 +17,20 @@ function Task({ task }) {
     removeTask(task.id);
   }
 
+  // const { changeTheme, themes } = useContext(ThemeContext);
+  // const [addMode, setAddMode] = useState(true);
+
   function handleEdit() {
+    bgSwitcher(theme.add, theme.update)
     findTask(task.id);
     const input = document.querySelector('input');
     input.focus();
+
+    // changeTheme(themes.update);
+
+    // setAddMode(false);
+    // console.log(addMode); // 1st "true" but it should be "false"
+    // changeTheme(addMode ? themes.add : themes.update);
   }
 
   return (
