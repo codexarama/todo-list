@@ -12,6 +12,11 @@ function Task({ task }) {
   // }, []);
 
   const { removeTask, findTask } = useContext(TaskListContext);
+  const [isHighlighted, setIsHighlighted] = useState(false);
+
+  function toggleHighlight() {
+    setIsHighlighted(!isHighlighted);
+  }
 
   function handleDelete() {
     removeTask(task.id);
@@ -21,7 +26,7 @@ function Task({ task }) {
   // const [addMode, setAddMode] = useState(true);
 
   function handleEdit() {
-    bgSwitcher(theme.add, theme.update)
+    bgSwitcher(theme.add, theme.update);
     findTask(task.id);
     const input = document.querySelector('input');
     input.focus();
@@ -34,8 +39,14 @@ function Task({ task }) {
   }
 
   return (
-    <li role="listitem" className="list_item">
-      <span className="list_item-label" tabIndex="0">
+    <li role="listitem"
+    className={isHighlighted ? 'list_item active' : 'list_item'}
+    >
+      <span
+        className='list_item-label'
+        tabIndex="0"
+        onClick={toggleHighlight}
+      >
         {task.label}
       </span>
       <div className="list_item-action">
