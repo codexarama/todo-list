@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useRef } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import { v1 as uuid } from 'uuid';
 
 export const TaskListContext = createContext();
