@@ -31,8 +31,8 @@ Tags:
   --gradient_hover: linear-gradient(-1.1turn, var(--primary), var(--secondary));
   --gradient-variant: linear-gradient(1.1turn, #1c9da3, #44dbc4);
   --gradient-variant_hover: linear-gradient(-1.1turn, #1c9da3, #44dbc4);
-  --gradient-neutral: linear-gradient(1.1turn, grey, darkgrey);
-  --gradient-neutral_hover: linear-gradient(-1.1turn, grey, darkgrey);
+  --gradient-neutral: linear-gradient(1.1turn, grey, lightgrey);
+  --gradient-neutral_hover: linear-gradient(-1.1turn, grey, lightgrey);
 }
 
 /* STANDARDS */
@@ -46,6 +46,20 @@ Tags:
 
 body {
   box-sizing: border-box;
+  background: no-repeat;
+}
+
+.clear_bg {
+  background: var(--gradient-neutral);
+  /* background: var(--gradient-variant) no-repeat; */
+}
+
+.add_bg {
+  background: var(--gradient-variant);
+}
+
+.update_bg {
+  background: var(--gradient);
 }
 
 h1 {
@@ -101,7 +115,6 @@ h1:focus {
   align-items: center;
   justify-content: center;
   padding-bottom: 3rem;
-  background: var(--gradient) no-repeat;
 }
 
 #tasks {
@@ -113,4 +126,11 @@ h1:focus {
   background-color: var(--bg);
   /* box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.5); */
   box-shadow: -1rem 1rem rgba(0, 0, 0, 0.5) !important;
+}
+
+.task_count {
+  padding: 0 0 3rem;
+  text-align: center;
+  color: var(--light);
+  font-size: x-large;
 }
