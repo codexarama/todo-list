@@ -63,7 +63,7 @@ export default function TaskForm() {
 
         {isCleared ? (
           <div id="no_task" aria-labelledby="status-information">
-            <span id="status-information">
+            <span tabIndex="0" id="status-information">
               No tasks
               <img src={icon_check} alt="icon check" id="icon_check" />
             </span>

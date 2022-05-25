@@ -53,7 +53,7 @@ function Task({ task }) {
         <button
           id="action_delete"
           tabIndex="0"
-          aria-label="delete task"
+          aria-label="delete-task"
           onClick={handleDelete}
         >
           {/* icon : background img url in css file */}
@@ -61,7 +61,8 @@ function Task({ task }) {
         <button
           id="action_edit"
           tabIndex="0"
-          aria-label="edit task"
+          aria-pressed="false"
+          aria-label="edit-task"
           onClick={handleEdit}
         >
           {/* icon : background img url in css file */}

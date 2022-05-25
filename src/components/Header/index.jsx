@@ -14,7 +14,7 @@ function Header({ heading }) {
       <h1 tabIndex="0" id="page-title">
         {heading}
       </h1>
-      <p className='task_count'>{`${tasks.length} to do`}</p>
+      <p tabIndex="0" className='task_count'>{`${tasks.length} to do`}</p>
     </header>
   );
 }
