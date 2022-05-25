@@ -1,0 +1,81 @@
+.popup {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup_content {
+  width: fit-content;
+  padding: 1rem 1.5rem;
+  color: var(--bg);
+  border: none;
+  border-radius: 1rem;
+  background: var(--light);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.popup_title {
+  padding: 0.25rem 0.75rem;
+  color: var(--light);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  background: var(--gradient-variant);
+}
+
+.popup_item {
+  position: relative;
+  display: block;
+}
+
+.popup_label {
+  margin-left: 1.5rem;
+}
+
+/* custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0.25rem;
+  left: 0;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 1rem;
+  background-color: var(--light-variant);
+}
+
+/* custom hover color */
+.popup_item-hight:hover input ~ .checkmark {
+  background-color: var(--hight);
+}
+
+.popup_item-medium:hover input ~ .checkmark {
+  background-color: var(--medium);
+}
+
+.popup_item-low:hover input ~ .checkmark {
+  background-color: var(--low);
+}
+
+/* custom checked color */
+.popup_item-hight input:checked ~ .checkmark {
+  background-color: var(--hight);
+}
+
+.popup_item-medium input:checked ~ .checkmark {
+  background-color: var(--medium);
+}
+
+.popup_item-low input:checked ~ .checkmark {
+  background-color: var(--low);
+}
