@@ -27,7 +27,8 @@ export default function TaskForm() {
     event.preventDefault();
     !isEdited
       ? (addTask(label), setLabel(''))
-      : (updateTask(isEdited.id, label), bgSwitcher(theme.update, theme.add));
+      : (updateTask(isEdited.id, label, isEdited.priority),
+        bgSwitcher(theme.update, theme.add));
     isCleared && bgSwitcher(theme.clear, theme.add);
   });
 
@@ -68,10 +69,13 @@ export default function TaskForm() {
               <img src={icon_check} alt="icon check" id="icon_check" />
             </span>
           </div>
-        ) : (!isEdited &&
+        ) : (
+          !isEdited && (
             <button id="action_clear" onClick={handleClear}>
               Clear
-            </button>)}
+            </button>
+          )
+        )}
       </section>
     </form>
   );
