@@ -16,16 +16,6 @@ function Task({ task }) {
 
   const { removeTask, findTask } = useContext(TaskListContext);
 
-  const [isHighlighted, setIsHighlighted] = useState(false);
-
-  // handle Popup element actions
-  const { isOpen, toggle, keyboardEscape } = usePopup();
-
-  // press escape to close Popup || Modal element
-  useEffect(() => {
-    keyboardEscape();
-  });
-
   function handleDelete() {
     removeTask(task.id);
   }
@@ -46,14 +36,28 @@ function Task({ task }) {
     // changeTheme(addMode ? themes.add : themes.update);
   }
 
+  function handlePriority() {
+    findTask(task.id);
+    toggle()
+  }
+
+  const [isHighlighted, setIsHighlighted] = useState(false);
+
+  // handle Popup "priority" actions
+  const { isOpen, toggle, keyboardEscape } = usePopup();
+
+  // press escape to close Popup "priority" || Modal element
+  useEffect(() => {
+    keyboardEscape();
+  });
+
   return (
     <>
       <li
         role="listitem"
         className={isHighlighted ? 'list_item active' : 'list_item'}
-        onClick={toggle}
       >
-        <span className="list_item-label" tabIndex="0">
+        <span className="list_item-label" tabIndex="0" onClick={handlePriority}>
           {task.label}
         </span>
         <div className="list_item-action">
@@ -76,7 +80,7 @@ function Task({ task }) {
           </button>
         </div>
       </li>
-      <Priority priority={isOpen} close={toggle} />
+      <Priority isOpen={isOpen} close={toggle} />
     </>
   );
 }
