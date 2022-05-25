@@ -126,7 +126,6 @@ body::-webkit-scrollbar,
 input:focus,
 button:focus,
 span:focus {
-  outline: none;
   box-shadow: 0 0 0 1.5px var(--light);
   border-radius: 2rem;
 }
@@ -160,8 +159,16 @@ h1:focus {
 }
 
 .task_count {
-  padding: 0 0 3rem;
+  width: fit-content;
+  margin: 0 auto 2rem;
+  padding: 0.5rem 1rem;
   text-align: center;
   color: var(--light);
   font-size: x-large;
+  border-radius: 2rem;
+}
+
+.task_count:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--light);
 }
