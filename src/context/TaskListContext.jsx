@@ -15,7 +15,7 @@ export default function TaskListProvider({ children }) {
   // console.table(tasks);
 
   function addTask(label) {
-    setTasks([...tasks, { id: uuid(), label }]);
+    setTasks([...tasks, { id: uuid(), label, priority: '' }]);
     setIsCleared(false);
   }
 
@@ -26,9 +26,9 @@ export default function TaskListProvider({ children }) {
     setIsEdited(task);
   }
 
-  function updateTask(id, label) {
+  function updateTask(id, label, priority) {
     const newTasks = tasks.map((task) =>
-      task.id === id ? { id, label } : task
+      task.id === id ? { id, label, priority } : task
     );
     setTasks(newTasks);
     setIsEdited(null);
