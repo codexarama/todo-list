@@ -15,7 +15,7 @@ export default function TaskListProvider({ children }) {
   // console.table(tasks);
 
   function addTask(label) {
-    setTasks([...tasks, { label, id: uuid() }]);
+    setTasks([...tasks, { id: uuid(), label }]);
     setIsCleared(false);
   }
 

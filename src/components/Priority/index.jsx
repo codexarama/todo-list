@@ -18,7 +18,6 @@ export default function Priority({ priority, close }) {
     !priority && (body.style.overflow = 'unset');
   }, [priority]);
 
-
   // popup DOM parent for portal assignation
   const DOMparent = document.getElementById('root');
 
@@ -31,7 +30,7 @@ export default function Priority({ priority, close }) {
 
             <div
               className="popup_item popup_item-hight popup_close"
-              onClick={() => setTimeout(close, 750)}
+              onClick={() => setTimeout(close, 500)}
             >
               <label htmlFor="hight" className="popup_label">
                 hight
@@ -42,7 +41,7 @@ export default function Priority({ priority, close }) {
 
             <div
               className="popup_item popup_item-medium popup_close"
-              onClick={() => setTimeout(close, 750)}
+              onClick={() => setTimeout(close, 500)}
             >
               <label htmlFor="medium" className="popup_label">
                 medium
@@ -53,7 +52,7 @@ export default function Priority({ priority, close }) {
 
             <div
               className="popup_item popup_item-low popup_close"
-              onClick={() => setTimeout(close, 750)}
+              onClick={() => setTimeout(close, 500)}
             >
               <label htmlFor="low" className="popup_label">
                 low
