@@ -22,17 +22,47 @@ Tags:
 /* COLORS */
 :root {
   --bg: #262626;
+  --bg-variant: #000;
+
+  --light: #fff;
+  --light-variant: lightgrey;
+
+  --hight: #ff6060;
+  --medium: #ff9472;
+  --low: darkgrey;
+
   --primary: #f2709c;
   --secondary: #ff9472;
   --tertiary: darkgrey;
-  --dark: #000;
-  --light: #fff;
+
+  --primary-variant: #1c9da3;
+  --secondary-variant: #44dbc4;
+  --tertiary-variant: grey;
+
   --gradient: linear-gradient(1.1turn, var(--primary), var(--secondary));
   --gradient_hover: linear-gradient(-1.1turn, var(--primary), var(--secondary));
-  --gradient-variant: linear-gradient(1.1turn, #1c9da3, #44dbc4);
-  --gradient-variant_hover: linear-gradient(-1.1turn, #1c9da3, #44dbc4);
-  --gradient-neutral: linear-gradient(1.1turn, grey, lightgrey);
-  --gradient-neutral_hover: linear-gradient(-1.1turn, grey, lightgrey);
+
+  --gradient-variant: linear-gradient(
+    1.1turn,
+    var(--primary-variant),
+    var(--secondary-variant)
+  );
+  --gradient-variant_hover: linear-gradient(
+    -1.1turn,
+    var(--primary-variant),
+    var(--secondary-variant)
+  );
+
+  --gradient-neutral: linear-gradient(
+    1.1turn,
+    var(--tertiary-variant),
+    var(--light-variant)
+  );
+  --gradient-neutral_hover: linear-gradient(
+    -1.1turn,
+    var(--tertiary-variant),
+    var(--light-variant)
+  );
 }
 
 /* STANDARDS */
@@ -69,6 +99,7 @@ h1 {
   color: var(--light);
 }
 
+/* input :not([type='radio']), */
 input,
 button {
   all: unset;
@@ -120,6 +151,7 @@ h1:focus {
   width: 40vw;
   height: fit-content;
   padding: 1.5rem;
+  position: relative;
   border-radius: 1rem;
   color: var(--light);
   background: var(--bg);
