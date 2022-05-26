@@ -4,8 +4,6 @@ import { TaskListContext } from '../../context/TaskListContext';
 
 import Task from '../Task';
 
-import './TaskList.css';
-
 export default function TaskList() {
   // useEffect(() => {
   //   console.log('task list is rendering');
