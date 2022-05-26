@@ -1,0 +1,42 @@
+.popup_label {
+  position: relative;
+  display: block;
+  padding-left: 1.5rem;
+}
+
+/* custom checkbox (radio) */
+.checkmark {
+  position: absolute;
+  top: 0.25rem;
+  left: 0;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 1rem;
+  background-color: var(--light-variant);
+}
+
+/* custom hover color */
+.popup_label-hight:hover input ~ .checkmark {
+  background-color: var(--hight);
+}
+
+.popup_label-medium:hover input ~ .checkmark {
+  background-color: var(--medium);
+}
+
+.popup_label-low:hover input ~ .checkmark {
+  background-color: var(--low);
+}
+
+/* custom checked color */
+.popup_label-hight input:checked ~ .checkmark {
+  background-color: var(--hight);
+}
+
+.popup_label-medium input:checked ~ .checkmark {
+  background-color: var(--medium);
+}
+
+.popup_label-low input:checked ~ .checkmark {
+  background-color: var(--low);
+}
