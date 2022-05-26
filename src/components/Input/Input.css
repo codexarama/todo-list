@@ -16,27 +16,32 @@
 }
 
 /* custom hover color */
-.popup_label-hight:hover input ~ .checkmark {
-  background-color: var(--hight);
-}
-
-.popup_label-medium:hover input ~ .checkmark {
-  background-color: var(--medium);
-}
-
-.popup_label-low:hover input ~ .checkmark {
-  background-color: var(--low);
-}
-
 /* custom checked color */
+.popup_label-hight:hover input ~ .checkmark,
 .popup_label-hight input:checked ~ .checkmark {
   background-color: var(--hight);
 }
 
+.popup_label-medium:hover input ~ .checkmark,
 .popup_label-medium input:checked ~ .checkmark {
   background-color: var(--medium);
 }
 
+.popup_label-low:hover input ~ .checkmark,
 .popup_label-low input:checked ~ .checkmark {
   background-color: var(--low);
 }
+
+.popup_label-none:hover input ~ .checkmark,
+.popup_label-none input:checked ~ .checkmark {
+  background-color: inherit;
+  border: 2px solid var(--none);
+}
+
+
+/* ******************************* */
+/* FIT COLOR FOR "active" PRIORITY */
+.active .popup_label-hight input:checked ~ .checkmark {
+  background-color: var(--hight);
+}
+
