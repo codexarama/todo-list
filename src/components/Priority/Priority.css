@@ -29,7 +29,6 @@
 .popup_title {
   padding: 0.25rem 0.75rem;
   color: var(--light);
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-radius: 2rem;
   background: var(--gradient-variant);
 }
