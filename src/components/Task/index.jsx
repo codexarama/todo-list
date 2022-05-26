@@ -41,8 +41,6 @@ function Task({ task }) {
     toggle()
   }
 
-  const [isHighlighted, setIsHighlighted] = useState(false);
-
   // handle Popup "priority" actions
   const { isOpen, toggle, keyboardEscape } = usePopup();
 
@@ -55,7 +53,7 @@ function Task({ task }) {
     <>
       <li
         role="listitem"
-        className={isHighlighted ? 'list_item active' : 'list_item'}
+        className={task.priority ? `list_item priority_${task.priority}` : 'list_item'}
       >
         <span className="list_item-label" tabIndex="0" onClick={handlePriority}>
           {task.label}

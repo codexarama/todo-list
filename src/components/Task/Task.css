@@ -1,17 +1,38 @@
 .list_item {
   cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
 }
 
-.active {
-  border-left: 3px solid var(--light);
-  /* border-left: 3px solid #44dbc4; */
-  /* border-left: 3px solid var(--secondary); */
+.priority_hight {
+  border-left: 3px solid var(--hight);
+  margin-left: -3px;
+}
+
+.priority_medium {
+  border-left: 3px solid var(--medium);
+  margin-left: -3px;
+}
+
+.priority_low {
+  border-left: 3px solid var(--low);
   margin-left: -3px;
 }
 
 .list_item-label,
 .list_item-action {
   padding: 0.5rem;
+}
+
+.list_item-label {
+  width: 85%;
+  padding: 0.5rem;
+  font-size: large;
+}
+
+.list_item-action {
+  display: flex;
 }
 
 .list_item-action button {
@@ -43,4 +64,3 @@
   box-shadow: none;
   border-radius: 0;
 }
-
