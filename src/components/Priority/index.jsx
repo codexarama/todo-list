@@ -27,17 +27,26 @@ export default function Priority({ isOpen, close }) {
 
   const { isEdited, updateTask } = useContext(TaskListContext);
 
-  const levels = ['hight', 'medium', 'low'];
+  const levels = ['hight', 'medium', 'low', 'none'];
+
+  const [isPriorized, setIsPriorized] = useState(levels[0]);
 
   function handlePriority(level) {
     isEdited && updateTask(isEdited.id, isEdited.label, level);
+    setIsPriorized(level);
+    // console.log(level);
     setTimeout(close, 500);
   }
 
   return createPortal(
     <>
       {isOpen ? (
-        <main autoFocus className="popup" id="priority" role="main">
+        <main
+          autoFocus
+          className="popup"
+          id="priority"
+          role="dialog"
+        >
           <fieldset className="popup_content">
             <legend className="popup_title">PRIORITY</legend>
 
@@ -46,6 +55,7 @@ export default function Priority({ isOpen, close }) {
                 <Input
                   key={level}
                   level={level}
+                  isPriorized={isPriorized}
                   handlePriority={() => handlePriority(level)}
                 />
               );
