@@ -1,10 +1,14 @@
 import './Input.css';
 
-export default function Input({ level, handlePriority }) {
+export default function Input({ level, handlePriority, isPriorized }) {
   return (
     <label
       htmlFor={level}
-      className={`popup_label popup_label-${level} popup_close`}
+      className={
+        isPriorized === level
+          ? `priorized popup_label popup_label-${level}`
+          : `popup_label popup_label-${level}`
+      }
     >
       {level}
       <input
