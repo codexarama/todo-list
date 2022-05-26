@@ -29,12 +29,8 @@ export default function Priority({ isOpen, close }) {
 
   const levels = ['hight', 'medium', 'low'];
 
-  const [isActive, setIsActive] = useState(levels[0]);
-
   function handlePriority(level) {
     isEdited && updateTask(isEdited.id, isEdited.label, level);
-    setIsActive(level);
-    // console.log(level);
     setTimeout(close, 500);
   }
 
@@ -49,7 +45,6 @@ export default function Priority({ isOpen, close }) {
               return (
                 <Input
                   key={level}
-                  isActive={isActive}
                   level={level}
                   handlePriority={() => handlePriority(level)}
                 />
