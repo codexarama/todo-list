@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { TaskListContext } from '../../context/TaskListContext';
+
 import Input from '../Input';
 
 import './Priority.css';
@@ -12,12 +13,10 @@ export default function Priority({ isOpen, close }) {
   useEffect(() => {
     const body = document.querySelector('body');
     const popup = document.getElementById('priority');
-    // const inputsRadio = document.querySelectorAll('[type="radio"]')
 
     isOpen && body.setAttribute('arias-hidden', 'true');
     isOpen && popup.setAttribute('arias-hidden', 'false');
     isOpen && (body.style.overflow = 'hidden');
-    // console.log([...inputsRadio].map((input) => input.value))
 
     !isOpen && body.setAttribute('arias-hidden', 'false');
     !isOpen && (body.style.overflow = 'unset');
@@ -30,8 +29,12 @@ export default function Priority({ isOpen, close }) {
 
   const levels = ['hight', 'medium', 'low'];
 
+  const [isActive, setIsActive] = useState(levels[0]);
+
   function handlePriority(level) {
     isEdited && updateTask(isEdited.id, isEdited.label, level);
+    setIsActive(level);
+    // console.log(level);
     setTimeout(close, 500);
   }
 
@@ -43,9 +46,15 @@ export default function Priority({ isOpen, close }) {
             <legend className="popup_title">PRIORITY</legend>
 
             {levels.map((level) => {
-              return <Input key={level} level={level} handlePriority={() => handlePriority(level)} />;
+              return (
+                <Input
+                  key={level}
+                  isActive={isActive}
+                  level={level}
+                  handlePriority={() => handlePriority(level)}
+                />
+              );
             })}
-
           </fieldset>
         </main>
       ) : null}
