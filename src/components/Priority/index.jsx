@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
 import { TaskListContext } from '../../context/TaskListContext';
@@ -25,28 +25,22 @@ export default function Priority({ isOpen, close }) {
   // popup DOM parent for portal assignation
   const DOMparent = document.getElementById('root');
 
-  const { isEdited, updateTask } = useContext(TaskListContext);
-
+  // handle priority
   const levels = ['hight', 'medium', 'low', 'none'];
-
+  const { isEdited, updateTask } = useContext(TaskListContext);
   const [isPriorized, setIsPriorized] = useState(levels[0]);
 
-  function handlePriority(level) {
+  const handlePriority = useCallback((level) => {
     isEdited && updateTask(isEdited.id, isEdited.label, level);
     setIsPriorized(level);
     // console.log(level);
     setTimeout(close, 500);
-  }
+  });
 
   return createPortal(
     <>
       {isOpen ? (
-        <main
-          autoFocus
-          className="popup"
-          id="priority"
-          role="dialog"
-        >
+        <main autoFocus className="popup" id="priority" role="dialog">
           <fieldset className="popup_content">
             <legend className="popup_title">PRIORITY</legend>
 
