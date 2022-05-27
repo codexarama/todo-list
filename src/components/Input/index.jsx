@@ -6,7 +6,7 @@ export default function Input({ level, handlePriority, isPriorized }) {
       htmlFor={level}
       className={
         isPriorized === level
-          ? `priorized popup_label popup_label-${level}`
+          ? `priorized_${level} popup_label popup_label-${level}`
           : `popup_label popup_label-${level}`
       }
     >

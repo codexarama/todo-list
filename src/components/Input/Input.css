@@ -18,30 +18,26 @@
 /* custom hover color */
 /* custom checked color */
 .popup_label-hight:hover input ~ .checkmark,
-.popup_label-hight input:checked ~ .checkmark {
+.popup_label-hight input:checked ~ .checkmark,
+.priorized_hight input ~ .checkmark {
   background-color: var(--hight);
 }
 
 .popup_label-medium:hover input ~ .checkmark,
-.popup_label-medium input:checked ~ .checkmark {
+.popup_label-medium input:checked ~ .checkmark,
+.priorized_medium input ~ .checkmark {
   background-color: var(--medium);
 }
 
 .popup_label-low:hover input ~ .checkmark,
-.popup_label-low input:checked ~ .checkmark {
+.popup_label-low input:checked ~ .checkmark,
+.priorized_low input ~ .checkmark {
   background-color: var(--low);
 }
 
 .popup_label-none:hover input ~ .checkmark,
-.popup_label-none input:checked ~ .checkmark {
+.popup_label-none input:checked ~ .checkmark,
+.priorized_none input ~ .checkmark {
   background-color: inherit;
   border: 2px solid var(--none);
 }
-
-
-/* ******************************* */
-/* FIT COLOR FOR "active" PRIORITY */
-.active .popup_label-hight input:checked ~ .checkmark {
-  background-color: var(--hight);
-}
-
