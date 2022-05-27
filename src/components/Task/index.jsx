@@ -1,10 +1,12 @@
 // import { useEffect } from 'react';
 import React, { useContext, useEffect, useState } from 'react';
+
 import { TaskListContext } from '../../context/TaskListContext';
 // import { ThemeContext, themes } from '../../context/ThemeContext';
-import { bgSwitcher, theme } from '../../utils/handlers';
 
+import { bgSwitcher, focusInput, theme } from '../../utils/handlers';
 import usePopup from '../../hooks/usePopup';
+
 import Priority from '../Priority';
 
 import './Task.css';
@@ -26,9 +28,7 @@ function Task({ task }) {
   function handleEdit() {
     bgSwitcher(theme.add, theme.update);
     findTask(task.id);
-    const input = document.querySelector('input');
-    input.focus();
-
+    focusInput()
     // changeTheme(themes.update);
 
     // setAddMode(false);
