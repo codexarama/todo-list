@@ -66,6 +66,7 @@ export default function TaskListProvider({ children }) {
   function clearList() {
     setTasks([]);
     setIsCleared(true);
+    focusInput()
   }
 
   const value = {
