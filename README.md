@@ -19,6 +19,8 @@ Develop a to do list app that is
 :heavy_plus_sign: ADD TASK
 :pencil2: EDIT TASK
 :arrows_counterclockwise: UPDATE TASK
+:calendar: TIMESTAMP
+:triangular_flag_on_post: PRIORITY
 :x: DELETE TASK
 :heavy_check_mark: CLEAR LIST
 
