@@ -27,7 +27,7 @@ export default function TaskForm() {
     event.preventDefault();
     !isEdited
       ? (addTask(label), setLabel(''))
-      : (updateTask(isEdited.id, label, isEdited.priority),
+      : (updateTask(isEdited.id, label, isEdited.priority, isEdited.timestamp),
         bgSwitcher(theme.update, theme.add));
     isCleared && bgSwitcher(theme.clear, theme.add);
   });

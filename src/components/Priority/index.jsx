@@ -31,7 +31,7 @@ export default function Priority({ isOpen, close }) {
   const [isPriorized, setIsPriorized] = useState(levels[0]);
 
   const handlePriority = useCallback((level) => {
-    isEdited && updateTask(isEdited.id, isEdited.label, level);
+    isEdited && updateTask(isEdited.id, isEdited.label, level, isEdited.timestamp);
     setIsPriorized(level);
     // console.log(level);
     setTimeout(close, 500);
