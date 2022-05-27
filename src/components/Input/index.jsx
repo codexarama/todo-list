@@ -9,6 +9,7 @@ export default function Input({ level, handlePriority, isPriorized }) {
           ? `priorized_${level} popup_label popup_label-${level}`
           : `popup_label popup_label-${level}`
       }
+      aria-pressed={isPriorized ? "true" : "false"}
     >
       {level}
       <input
