@@ -2,7 +2,7 @@
 
     Personal project | Dynamic to do list manager
 
-<kbd>![Visuel](./todo-list-1.png)</kbd>
+<kbd>![Visuel](./screens/todo-list-1.png)</kbd>
 
 > PROBLEMATIC
 
@@ -16,19 +16,24 @@ Develop a to do list app that is
 
 ## Features
 
-:heavy_plus_sign: ADD TASK
+### :heavy_plus_sign: ADD TASK
 
-:pencil2: EDIT TASK
+<kbd>![Visuel](./screen/todo-list-2.png)</kbd>
 
-:arrows_counterclockwise: UPDATE TASK
+### :pencil2: UPDATE TASK
 
-:calendar: TIMESTAMP
+<kbd>![Visuel](./screen/todo-list-3.png)</kbd>
 
-:triangular_flag_on_post: PRIORIZE by level
+### :calendar: TIMESTAMP
 
-:x: DELETE TASK
+### :triangular_flag_on_post: PRIORIZE by level
 
-:heavy_check_mark: CLEAR LIST
+<kbd>![Visuel](./screen/todo-list-4.png)</kbd>
+<kbd>![Visuel](./screen/todo-list-5.png)</kbd>
+
+### :x: DELETE TASK
+
+### :heavy_check_mark: CLEAR LIST
 
 
 ## Skills developed
@@ -41,11 +46,3 @@ Develop a to do list app that is
 - [x] Animations
 - [x] Accessibility rules & customs
 - [x] Custom user experience
-
-## Add Task
-
-<kbd>![Visuel](./todo-list-2.png)</kbd>
-
-## Update task
-
-<kbd>![Visuel](./todo-list-3.png)</kbd>
