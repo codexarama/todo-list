@@ -38,7 +38,7 @@ function Task({ task }) {
 
   function handlePriority() {
     findTask(task.id);
-    toggle()
+    toggle();
   }
 
   // handle Popup "priority" actions
@@ -53,24 +53,38 @@ function Task({ task }) {
     <>
       <li
         role="listitem"
-        className={task.priority ? `list_item priority_${task.priority}` : 'list_item'}
+        className={
+          task.priority ? `list_item priority_${task.priority}` : 'list_item'
+        }
       >
-        <span className="list_item-label" tabIndex="0" onClick={handlePriority}>
-          {task.label}
-        </span>
+        <div className="list_item-info">
+          <span
+            className="list_item-infoLabel"
+            tabIndex="0"
+            onClick={handlePriority}
+          >
+            {task.label}
+          </span>
+          <span
+            className="list_item-infoTimestamp"
+            tabIndex="0"
+            onClick={handlePriority}
+          >
+            {task.timestamp}
+          </span>
+        </div>
         <div className="list_item-action">
           <button
-            id="action_delete"
             tabIndex="0"
+            className="list_item-actionDelete"
             aria-label="delete-task"
             onClick={handleDelete}
           >
             {/* icon : background img url in css file */}
           </button>
           <button
-            id="action_edit"
             tabIndex="0"
-            aria-pressed="false"
+            className="list_item-actionEdit"
             aria-label="edit-task"
             onClick={handleEdit}
           >
