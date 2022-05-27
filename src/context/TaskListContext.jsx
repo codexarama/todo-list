@@ -15,7 +15,15 @@ export default function TaskListProvider({ children }) {
   // console.table(tasks);
 
   function addTask(label) {
-    setTasks([...tasks, { id: uuid(), label, priority: '' }]);
+    setTasks([
+      ...tasks,
+      {
+        id: uuid(),
+        label,
+        priority: '',
+        timestamp: new Date().toLocaleDateString(),
+      },
+    ]);
     setIsCleared(false);
   }
 
@@ -28,7 +36,9 @@ export default function TaskListProvider({ children }) {
 
   function updateTask(id, label, priority) {
     const newTasks = tasks.map((task) =>
-      task.id === id ? { id, label, priority } : task
+      task.id === id
+        ? { id, label, priority, timestamp: new Date().toLocaleDateString() }
+        : task
     );
     setTasks(newTasks);
     setIsEdited(null);
