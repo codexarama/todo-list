@@ -1,5 +1,8 @@
 import { createContext, useState, useEffect } from 'react';
+
 import { v1 as uuid } from 'uuid';
+
+import { focusInput } from '../utils/handlers';
 
 export const TaskListContext = createContext();
 
@@ -17,6 +20,7 @@ export default function TaskListProvider({ children }) {
   function addTask(label) {
     setTasks([...tasks, { id: uuid(), label, priority: '' }]);
     setIsCleared(false);
+    focusInput()
   }
 
   const [isEdited, setIsEdited] = useState(null);
@@ -32,6 +36,7 @@ export default function TaskListProvider({ children }) {
     );
     setTasks(newTasks);
     setIsEdited(null);
+    focusInput()
   }
 
   // console.log(tasks);
@@ -50,6 +55,7 @@ export default function TaskListProvider({ children }) {
   function clearList() {
     setTasks([]);
     setIsCleared(true);
+    focusInput()
   }
 
   const value = {
