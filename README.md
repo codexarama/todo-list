@@ -16,11 +16,11 @@ Develop a to do list app that is
 
 ## Features
 
-### :heavy_plus_sign: ADD TASK _(automatic timestamp)_
+### :heavy_plus_sign: ADD TASK _(V.2 : automatic timestamp)_
 
 <kbd>![Visuel](./screens/todo-list-2.png)</kbd>
 
-### :pencil2: UPDATE TASK _(and timestamp)_
+### :pencil2: UPDATE TASK _(V.2 automatic timestamp)_
 
 <kbd>![Visuel](./screens/todo-list-3.png)</kbd>
 
