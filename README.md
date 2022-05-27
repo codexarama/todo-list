@@ -2,7 +2,7 @@
 
     Personal project | Dynamic to do list manager
 
-<kbd>![Visuel](./todo-list-1.png)</kbd>
+<kbd>![Visuel](./screens/todo-list-1.png)</kbd>
 
 > PROBLEMATIC
 
@@ -17,9 +17,17 @@ Develop a to do list app that is
 ## Features
 
 :heavy_plus_sign: ADD TASK
+
 :pencil2: EDIT TASK
+
 :arrows_counterclockwise: UPDATE TASK
+
+:calendar: TIMESTAMP
+
+:triangular_flag_on_post: PRIORIZE by level
+
 :x: DELETE TASK
+
 :heavy_check_mark: CLEAR LIST
 
 ## Skills developed
