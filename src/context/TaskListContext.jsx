@@ -1,5 +1,8 @@
 import { createContext, useState, useEffect } from 'react';
+
 import { v1 as uuid } from 'uuid';
+
+import { focusInput } from '../utils/handlers';
 
 export const TaskListContext = createContext();
 
@@ -14,6 +17,9 @@ export default function TaskListProvider({ children }) {
   }, [tasks]);
   // console.table(tasks);
 
+  const timestamp = new Date().toLocaleDateString().split('/').join('.');
+  // console.log(timestamp);
+
   function addTask(label) {
     setTasks([
       ...tasks,
@@ -21,10 +27,11 @@ export default function TaskListProvider({ children }) {
         id: uuid(),
         label,
         priority: '',
-        timestamp: new Date().toLocaleDateString(),
+        timestamp: timestamp,
       },
     ]);
     setIsCleared(false);
+    focusInput();
   }
 
   const [isEdited, setIsEdited] = useState(null);
@@ -36,12 +43,11 @@ export default function TaskListProvider({ children }) {
 
   function updateTask(id, label, priority) {
     const newTasks = tasks.map((task) =>
-      task.id === id
-        ? { id, label, priority, timestamp: new Date().toLocaleDateString() }
-        : task
+      task.id === id ? { id, label, priority, timestamp: timestamp } : task
     );
     setTasks(newTasks);
     setIsEdited(null);
+    focusInput();
   }
 
   // console.log(tasks);
