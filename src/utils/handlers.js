@@ -23,7 +23,6 @@ document.addEventListener('keydown', (e) => {
 });
 
 // THEME SWITCHER
-
 export const theme = {
   clear: 'clear_bg',
   add: 'add_bg',
@@ -32,4 +31,10 @@ export const theme = {
 
 export function bgSwitcher(previous, updated) {
   document.body.classList.replace(previous, updated);
+}
+
+// INPUT FOCUSER
+export function focusInput() {
+  const input = document.querySelector('input');
+  input.focus();
 }
