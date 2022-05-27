@@ -18,18 +18,18 @@ Develop a to do list app that is
 
 ### :heavy_plus_sign: ADD TASK
 
-<kbd>![Visuel](./screen/todo-list-2.png)</kbd>
+<kbd>![Visuel](./screens/todo-list-2.png)</kbd>
 
 ### :pencil2: UPDATE TASK
 
-<kbd>![Visuel](./screen/todo-list-3.png)</kbd>
+<kbd>![Visuel](./screens/todo-list-3.png)</kbd>
 
 ### :calendar: TIMESTAMP
 
 ### :triangular_flag_on_post: PRIORIZE by level
 
-<kbd>![Visuel](./screen/todo-list-4.png)</kbd>
-<kbd>![Visuel](./screen/todo-list-5.png)</kbd>
+<kbd>![Visuel](./screens/todo-list-4.png)</kbd>
+<kbd>![Visuel](./screens/todo-list-5.png)</kbd>
 
 ### :x: DELETE TASK
 
