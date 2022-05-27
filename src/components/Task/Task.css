@@ -2,6 +2,7 @@
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 0.5rem;
 }
 
@@ -20,47 +21,55 @@
   margin-left: -3px;
 }
 
-.list_item-label,
-.list_item-action {
-  padding: 0.5rem;
+.list_item-info {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
 }
 
-.list_item-label {
-  width: 85%;
-  padding: 0.5rem;
+.list_item-infoLabel {
+  padding: 0.5rem 0.5rem 0 0.5rem;
   font-size: large;
+}
+
+.list_item-infoTimestamp {
+  padding-left: 0.5rem;
+  font-size: x-small;
+  color: var(--tertiary-variant);
 }
 
 .list_item-action {
   display: flex;
+  padding: 0 0.5rem;
 }
 
 .list_item-action button {
   width: 1rem;
+  height: 1rem;
 }
 
-#action_delete {
+.list_item-actionDelete {
   margin-right: 0.5rem;
   background: url(../../assets/icon_trash.svg) no-repeat center bottom;
 }
 
-#action_delete:hover,
-#action_delete:focus {
+.list_item-actionDelete:hover,
+.list_item-actionDelete:focus {
   background-image: url(../../assets/icon_trash_alt.svg);
 }
 
-#action_edit {
+.list_item-actionEdit {
   margin-left: 0.5rem;
   background: url(../../assets/icon_edit.svg) no-repeat center bottom;
 }
 
-#action_edit:hover,
-#action_edit:focus {
+.list_item-actionEdit:hover,
+.list_item-actionEdit:focus {
   background-image: url(../../assets/icon_edit_alt.svg);
 }
 
-#action_delete:focus,
-#action_edit:focus {
+.list_item-actionDelete:focus,
+.list_item-actionEdit:focus {
   box-shadow: none;
   border-radius: 0;
 }
