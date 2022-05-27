@@ -16,15 +16,13 @@ Develop a to do list app that is
 
 ## Features
 
-### :heavy_plus_sign: ADD TASK
+### :heavy_plus_sign: ADD TASK _(automatic timestamp)_
 
 <kbd>![Visuel](./screens/todo-list-2.png)</kbd>
 
-### :pencil2: UPDATE TASK
+### :pencil2: UPDATE TASK _(and timestamp)_
 
 <kbd>![Visuel](./screens/todo-list-3.png)</kbd>
-
-### :calendar: TIMESTAMP
 
 ### :triangular_flag_on_post: PRIORIZE by level
 
@@ -33,8 +31,11 @@ Develop a to do list app that is
 
 ### :x: DELETE TASK
 
+<kbd>![Visuel](./screens/todo-list-6.png)</kbd>
+
 ### :heavy_check_mark: CLEAR LIST
 
+<kbd>![Visuel](./screens/todo-list-1.png)</kbd>
 
 ## Skills developed
 
