@@ -6,6 +6,10 @@
   background-color: var(--bg-variant);
 }
 
+#add_task:focus-within {
+  box-shadow: none;
+}
+
 ::placeholder {
   color: var(--tertiary);
 }
