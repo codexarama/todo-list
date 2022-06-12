@@ -50,6 +50,7 @@ export default function TaskForm() {
       <input
         id="add_task"
         type="text"
+        autoFocus
         placeholder="New task"
         ref={refLabel}
         value={label}
